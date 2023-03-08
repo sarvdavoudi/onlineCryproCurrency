@@ -8,14 +8,11 @@ const fetchCoinsFromApi = async () => {
 
 //when page is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  let timer = setInterval(async() => {
-  const coins = await fetchCoinsFromApi();
-  showData(coins);
+  let timer = setInterval(async () => {
+    const coins = await fetchCoinsFromApi();
+    showData(coins);
   }, 5000);
 });
-
-
-
 
 const showData = (arrayOfCoins) => {
   const finalView = arrayOfCoins.map((item) => `<p>${item.name} : ${item.current_price} </p>`);
